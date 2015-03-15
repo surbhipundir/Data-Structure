@@ -1,0 +1,22 @@
+public class Question5_1 {
+
+	public static void main(String [] args){
+		long tempVar = 3l;
+		checkParity(tempVar);
+	}
+	
+	public static void checkParity(long inputWord){
+		int count =0;
+		for(int n=0;n<=63;n++){
+			long tempVar = 1<<n;
+			if((inputWord & tempVar) == tempVar)
+				count++;
+		}
+		
+		if(count % 2 == 0){
+			System.out.println("not parity number");
+		}else{
+			System.out.println("parity number");
+		}
+	}
+}
