@@ -1,0 +1,14 @@
+public class Question_5_2 {
+	public static void main(String [] args){
+		swapBit(2l,3,1);
+	}
+	
+	public static void swapBit(long inputWord,int i,int j){
+		//check if bit differ than swap else dont
+		if(((inputWord>>i)&1) != ((inputWord>>j)&1) ){
+			inputWord ^=(1l<<i)|(1l<<j);
+		}
+		System.out.println("the bit is : "+inputWord);
+		
+	}
+}
