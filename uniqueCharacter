@@ -1,0 +1,28 @@
+public class Question1_1 {
+
+	public static void main(String[] args) {
+		boolean result = checkDuplicate("amia");
+		if (result == false) {
+			System.out.println("duplicate string");
+		} else {
+			System.out.println("unique string");
+		}
+
+	}
+//assume all in small letter
+	public static boolean checkDuplicate(String inputStr) {
+		int result = 0;
+		if (null == inputStr && inputStr.equalsIgnoreCase("")) {
+			return false;
+		} else {
+			for (int i = 0; i < inputStr.length(); i++) {
+				int val = inputStr.charAt(i) - 'a';
+				if ((result & (1 << val)) > 0) {
+					return false;
+				}
+				result |= (1 << val);
+			}
+			return true;
+		}
+	}
+}
