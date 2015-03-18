@@ -1,0 +1,38 @@
+public class Question1_4 {
+
+	public static void main(String[] args) {
+		//input given as strng with sufficient space in the end and the real length of the string
+		String inputStr = "Mr John Smith       ";
+		char [] inputChar = new char[inputStr.length()];
+		for(int i=0;i<inputStr.length();i++){
+			inputChar[i]=inputStr.charAt(i);
+		}
+		char [] newString = replaceStringWithSpecialCharacter(inputChar,13);
+		for(int j = 0;j<newString.length;j++)
+			System.out.print(newString[j]);
+	}
+	
+	public static char[] replaceStringWithSpecialCharacter(char [] inputStr,int lengthOfString){
+		int spaceCount = 0,newLength,i;
+		for(i =0;i<lengthOfString;i++){
+			if(inputStr[i] == ' '){
+				spaceCount++;
+			}
+		}
+		newLength = lengthOfString+spaceCount*2;//coz we have %20 to add thus *2
+		inputStr[newLength]='\0';
+		//traverser the list from backward and add the %20 in the space, ustilizing buffer space
+		for(i = lengthOfString -1;i>=0;i--){
+			if(inputStr[i] == ' '){
+				inputStr[newLength - 1]= '0';
+				inputStr[newLength - 2]= '2';
+				inputStr[newLength - 3]= '%';
+				newLength = newLength - 3;
+			}else{
+				inputStr[newLength - 1] = inputStr[i];
+				newLength = newLength -1;
+			}
+		}
+		return inputStr;
+	}
+}
