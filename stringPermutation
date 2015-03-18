@@ -1,0 +1,27 @@
+public class Question1_3 {
+
+	public static void main(String[] args) {
+		boolean permutationResult = permutationString("we are indian","are indian");
+		if(permutationResult == true){
+			System.out.println("yes they are permutation");
+		}else{
+			System.out.println("No they are not permutation");
+		}
+
+	}
+	
+	public static String sort(String inputString){
+		char [] strResult = inputString.toCharArray();
+		java.util.Arrays.sort(strResult);
+		return new String(strResult);
+	}
+	
+	public static boolean permutationString(String inputStr1,String inputStr2){
+		if(inputStr1.length() != inputStr2.length()){
+			return false;
+		}else{
+			return sort(inputStr1).equals(sort(inputStr2));
+		}
+	}
+
+}
