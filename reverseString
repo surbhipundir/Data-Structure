@@ -1,0 +1,22 @@
+public class Question1_2 {
+//not null terminated here
+	public static void main(String[] args) {
+		char [] reverseResultStr = reverseString("surbhi");
+		for(int j = 0; j<reverseResultStr.length;j++)
+			System.out.print(reverseResultStr[j]);
+	}
+	
+	public static char[] reverseString(String inputString){
+		char [] tempTring = new char[inputString.length()];
+		int length = inputString.length();
+		if(null != inputString){
+			for(int i =0; i<inputString.length();i++){
+				length--;
+				tempTring[i] = inputString.charAt(length);
+				
+				
+			}
+		}
+		return tempTring;
+	}
+}
