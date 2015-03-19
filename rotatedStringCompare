@@ -1,0 +1,33 @@
+public class Question1_8 {
+
+	public static void main(String[] args) {
+		boolean result = checkRotate("waterbottle","erbontlewat");
+		if(result == true){
+			System.out.println("Yes it is rotation");
+		}else{
+			System.out.println("No it is not rotation");
+		}
+	}
+
+	public static boolean checkRotate(String str1,String str2){
+		if(null == str1 && null == str2){
+			return false;
+		}
+		if(str1.length() != str2.length()){
+			return false;
+		}else{
+			String concanateString = str1+str1;
+			boolean result = isSubstring(concanateString,str2);
+			return result;
+		}
+	}
+	
+	public static boolean isSubstring(String str1,String str2){
+		
+		if(str1.contains(str2)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+}
